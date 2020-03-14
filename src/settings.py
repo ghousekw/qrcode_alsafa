@@ -69,7 +69,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'src.wsgi.application'
-
+AUTH_USER_MODEL = 'qrcode.User'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
