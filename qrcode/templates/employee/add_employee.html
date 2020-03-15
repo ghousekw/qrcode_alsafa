@@ -1,0 +1,67 @@
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+</head>
+<body>
+
+    <form method="post" esnctype="multipart/form-data">
+        {% csrf_token %}
+
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4 col-xs-12 ">
+                            <span>{{form.username|as_crispy_field}}</span>
+                            <!-- {{form.errors.username}} -->
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12 ">
+                            <span>{{form.first_name|as_crispy_field}}</span>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <span>{{form.last_name|as_crispy_field}}</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <span>{{form.profession|as_crispy_field}}</span>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12 ">
+                            <span>{{form.email|as_crispy_field}}</span>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <span>{{form.mobile|as_crispy_field}}</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <span>{{form.website|as_crispy_field}}</span>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <span>{{form.social_link|as_crispy_field}}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-11 col-sm-11 col-xs-12">
+                        <span>{{form.activity|as_crispy_field}}</span>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom:5%;margin-top:3%;">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        {% if object %}
+                        <input type="submit" name="employeedetail"
+                            id="employeedetail" value="Update"/>
+
+                        {% else %}
+                        <input type="submit" name="employeedetail"
+                            id="employeedetail" value="Save" />
+                        {% endif %}
+                    </div>
+                    </div>
+                </form>
+</body>
+</html>
